@@ -1,0 +1,167 @@
+.div-header-container-login-cadastro #btn-login{
+    background-color: #065796;
+    border-radius: 10px;    
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    transition: 0.2s;
+    padding: 2px 40px;
+}
+
+.div-header-container-login-cadastro #btn-login:hover{
+    color: #414141;
+    background-color: #5FAFEC;
+    font-size: 15px;
+}
+
+.cadastro{
+    margin: 60px auto;
+}
+
+.cadastro-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #065796;
+    border-radius: 50px;    
+    height: 495px;
+}
+
+.cadastro-container .cadastro-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+.cadastro-container .cadastro-form .textos .titulo{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+}
+
+.cadastro-container .cadastro-form .textos p{
+    margin-top: 10px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.cadastro-container .cadastro-form .form{
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.row{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50px;
+    justify-content: center;
+    padding: 5px 0 ;
+    align-items: flex-start;
+}
+
+
+.cadastro-container .cadastro-form .form input{
+    background: #FFFFFF;
+    border: none;
+    border-bottom: solid 2px #5FAFEC;
+    border-radius: 2px;
+    height: 20px;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.cadastro-container .cadastro-form .form input:hover{
+    border-bottom: solid 2px #000;
+}
+.cadastro-container .cadastro-form .form input:focus{
+    border-bottom: solid 2px #000;
+}
+
+.cadastro-container .cadastro-form .form label{
+    color: #fff;
+    font-weight: 300;
+    margin-top: 0px;
+}
+
+.cadastro-container .cadastro-form .form label,input{
+    display: block;
+}
+
+#inp_razaosocial, #inp_email, #inp_end, #inp_complemento{
+    width: 250px;
+}
+
+#inp_cnpj, #inp_tel, #inp_senha, #inp_senhaconfirm{
+    width: 140px;
+}
+
+
+#inp_tel, #inp_cnpj, #label-inp_cnpj, #label-inp_tel{
+    margin-left: 35px;
+}
+
+#inp_cep{
+    width: 80px;
+}
+
+#inp_n {
+    width: 72px;
+}
+
+
+
+#inp_complemento{
+    margin-right: 250px;
+}
+
+
+
+.cadastro-form button {
+    color: #FFF;
+    width: 120px;
+    height: 35px;
+    background: #5FAFEC;
+    border: 1px solid #504100;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+.cadastro-form button:hover{
+    border: 2px solid #000;
+    background-color: #5FAFEC;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.cadastro-container .img{
+    width: 35%; 
+    position: relative;
+}
+
+.cadastro-container .img img{
+    width: 325px;
+    position: absolute;
+    top: -51px;
+    right: -70px;
+}

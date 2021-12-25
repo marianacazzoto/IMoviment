@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/calculadora.css">
+    <script type="text/JavaScript" src="./js/control.js"></script>
+</head>
+<body>
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=96a476ce-cae4-4e95-a7a2-4356d5d4cbae"> </script>
+    <!-- Cabeçalho padrão do site -->
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">
+                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    <li id="li-left"><a href="./index.html" class="nav-bar-li">Home</a></li>
+                    <li id="li-center"><a href="./about-us.html" class="nav-bar-li">Sobre</a></li>
+                    <li id="li-right"><a href="./contato.html" class="nav-bar-li">Contato</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./cadastro.html" id="btn-cadastrar">Calculadora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--    
+        Sessão com a calculadora financeira
+        As classes referentes a essa sessão ter como identificador principal o clc
+    -->
+    <section class="clc">
+        <div class="container">
+            <div class="clc-container">
+                <h1 id="clc-titulo">SIMULADOR</h1>
+                <p id="clc-desc">Preencha os campos abaixo para ter acesso à comparação de consumo sem e com o nosso serviço.</p>
+                <div id="clc-form-n-img">
+                    <div id="clc-form">
+                        <!-- Div com a mensagem da calculadora -->
+                        <div class="display-msg">
+                            <b style="color: #BC3A34;">SEM A SOLUÇÃO </b>
+                            <p face="Calibri"> <p>Por mês, as <b id="span_qtd_lampadas"> 0 </b> lampadas irão gastar <b id="span_kwh_normal" style="color: #BC3A34;">0</b>KWh, na sua conta de luz essa quantidade resulta no valor de R$<b id="span_valor_normal" style="color: #BC3A34;">0</b>.</p>
+                            <b style="color: #47B0D7;">COM A SOLUÇÃO </b>
+                            <p>A mesma quantidade de lampadas irão gastar <b id="span_kwh" style="color: #47B0D7;"> 0 </b> KWh , na sua conta de luz essa quantidade resulta no valor de R$ <b id="span_valor" style="color: #47B0D7;"> 0 </b> tendo uma economia de <b id="span_porcentagem"style="color: #47B0D7;"> 0 </b>.</p>
+                            <div id="div_barra" style = "height:30px; background-color: #47B0D7;" ></div> 
+                            <p><b>OBS: considerando que o valor do kwh seja <b id="valor_KWH"> 0 </b> e não aplicando o valor de qualquer bandeira.</b></p>
+                            <p>**com base em 30 dias ligadas, por 15 segundos quando acionada! </p></font>
+                            <input type="button" value="Simular novamente" onclick="voltar()" id="clc-btn">
+                        </div>
+                        <!-- Div com o formulário da calculadora -->
+                        <div class="display-form">
+                            <label for="" class="clc-qst">Quantidade de lâmpadas:</label><input type="text" name="quant_lampadas" id="quant_lampadas" class="clc-inp">
+                            <label for="" class="clc-qst">Voltagem da lâmpada em Watts:</label><input type="text" name="voltagem_watts" id="voltagem_watts" class="clc-inp">
+                            <label for="" class="clc-qst">Por quanto tempo ela fica ligada? (Coloque em horas)</label><input type="text" name="hora_media" id="hora_media" class="clc-inp">
+                            <label for="" class="clc-qst">Quantidade média de pessoas que passam pela lâmpada por dia:</label><input type="text" name="pessoas_media" id="pessoas_media"  class="clc-inp">
+                            <input type="button" value="Simular" onclick="calc_simulacao()" id="clc-btn">
+                        </div>
+                    </div>
+                    <div id="clc-img">
+                        <img src="./img/img-simulador.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer padrão do site -->
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1">
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine         ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+
+</script>

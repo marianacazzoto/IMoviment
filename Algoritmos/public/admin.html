@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+
+<body onload="mostrarCondominio()">
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=96a476ce-cae4-4e95-a7a2-4356d5d4cbae"> </script>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">
+                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    <li id="li-right"><a href="mailto:support@bandtec1658.zendesk.com" class="nav-bar-li">Assistência Técnica</a></li>
+                    <li id="li-right"><a href="./calculadora-financeira.html" class="nav-bar-li">Calculadora</a></li>
+                    <li id="li"><a href="./cadastro-cond.html" class="nav-bar-btn">Cadastrar Condomínios</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./index.html"><button onclick="limparSessao()" id="btn-cadastrar">Sair</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="admin">
+        <div class="container">
+            <div class="admin-container">
+                <h1 class="title">BEM VINDO!</h1>
+                <p class="description">Confira abaixo os perfis sob sua supervisão e os gráficos de movimentação em
+                    tempo real..</p>
+                <div class="background">
+                    <div class="cond-list">
+                        <h1 class="title">Seus condominios</h1>
+
+                        <!--                        <a href="./dashboard.html">
+                            <div class="card">
+                                <img src="./img/cond4.jpg" alt="">
+                                <div class="descr">
+                                    <h1 class="title">Condomínio Tiradentes</h1>
+                                    <p class="cnpj">CNPJ: xxxxx</p>
+                                </div>
+                            </div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1">
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    function mostrarCondominio() {
+        var usuario = sessionStorage.ID_USUARIO;
+
+        fetch("./usuarios/mostrarCondominio", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                usuario: usuario
+            })
+        }).then(function (resposta) {
+            console.log(JSON.stringify(resposta))
+            if (resposta.ok) {
+
+                resposta.json().then(resposta => {
+                    if (resposta.length > 0) {
+                        let div = document.querySelector(".cond-list")
+                        for (let i = 0; i < resposta.length; i++) {
+                            fetch(`https://viacep.com.br/ws/${resposta[i].cep}/json/`)
+                                .then(function (resultado) {
+                                    resultado.json()
+                                        .then(function (json) {
+                                            let local = json.logradouro + ", " + resposta[i].numero + " - " + json.bairro + ", " + json.localidade + " - " + json.uf + ", " + json.cep;
+                                            createCond(div, resposta[i].thumbnail, resposta[i].nome, local, resposta[i].id_condominio)
+                                        })
+                                        .catch(function (error) {
+                                            console.log(error)
+                                        })
+                                })
+
+                        }
+                    } else {
+                        document.querySelector(".cond-list").innerHTML = "<h1 class='title'>Não foi encontrado nenhum condominio em seu cadastro</h1>"
+                        document.querySelector(".cond-list").innerHTML += `<button onclick="window.location = 'cadastro-cond.html'">Cadastrar condominio</button>`
+                    }
+                })
+
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+
+    function dashboard(x) {
+        sessionStorage.ID_CONDOMINIO = x
+        window.location = 'dashboard.html'
+    }
+
+    function createCond(a, x, y, z, id) {
+        var click = document.createElement('a');
+        click.setAttribute('onclick', `dashboard(${id})`);
+        var card = document.createElement("div");
+        card.setAttribute("class", "card");
+        var img = document.createElement("img");
+        var descr = document.createElement('div');
+        descr.setAttribute("class", "descr")
+        var title = document.createElement('h1');
+        title.setAttribute("class", "title")
+        var cnpj = document.createElement("p");
+        cnpj.setAttribute("class", "cnpj")
+
+        descr.appendChild(title)
+        descr.appendChild(cnpj)
+        card.appendChild(img)
+        card.appendChild(descr)
+        click.appendChild(card)
+
+        img.setAttribute("src", `./img/${x}`)
+        var titleText = document.createTextNode(y)
+        var cnpjText = document.createTextNode(z)
+        cnpj.appendChild(cnpjText)
+        title.appendChild(titleText)
+        a.appendChild(click)
+    }
+
+    function consultaCEP(x, numero) {
+
+    }
+
+</script>

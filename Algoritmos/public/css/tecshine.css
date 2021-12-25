@@ -1,0 +1,115 @@
+/* Tela Inicio - TecShine */
+.background {
+position: relative;
+width: 1920px;
+height: 3891px;
+background: #065796;
+}
+
+/* TECSHINE - logo */
+.menu{
+position: absolute;
+width: 190px;
+height: 60px;
+left: 10px;
+top: 25px;
+
+font-family: Chivo;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+
+color: #414141;
+}
+
+/* Home */
+.home{
+
+position: absolute;
+width: 150px;
+height: 50px;
+left: 250px;
+top: 5px;
+
+font-family: Chivo;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+text-align: center;
+
+color: #414141;
+}
+
+/* Sobre */
+
+.about{
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 500px;
+top: 5px;
+
+font-family: Chivo;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height */
+
+text-align: center;
+
+color: #414141;
+}
+/* Contato */
+.contact{
+position: absolute;
+width: 100px;
+height: 50px;
+left: 600px;
+top: 5px;
+
+font-family: Chivo;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+/* identical to box height */
+
+text-align: center;
+
+color: #414141;
+}
+
+/* Cadastro + botão*/
+.cadastro{
+    position: absolute;
+width: 145px;
+height: 20px;
+left: 150px;
+top: 3px;
+
+font-family: Chivo;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+color: #fffb00;
+}
+
+/* Rectangle 2 */
+.btn-primary {
+position: absolute;
+width: 165px;
+height: 30px;
+left: 150px;
+top: 3px;
+
+background: #414141;
+box-shadow: 0px 4px 4px rgba(255, 217, 0, 0.25);
+border-radius: 10px;
+}

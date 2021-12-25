@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/funcoes.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">
+                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    <li id="li-right"><a href="mailto:support@bandtec1658.zendesk.com" class="nav-bar-li">Assistência Técnica</a></li>
+                    <li id="li-right"><a href="./calculadora-financeira.html" class="nav-bar-li">Calculadora</a></li>
+                    <li id="li"><a href="./admin.html" class="nav-bar-btn">Meus condominios</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./index.html"><button onclick="limparSessao()" id="btn-cadastrar">Sair</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard">
+        <div class="container">
+            <div class="graph">
+                <h4 style="color: #1C85E8;">Movimentação em tempo real</h4>
+                <canvas id="chart-real"></canvas>
+                <!--<canvas>usado para fazer desenhos-->
+            </div>
+            <div class="graph">
+                <h4 style="color: #1C85E8;">Movimentação nos últimos dias</h4>
+                <canvas id="chart-switch"></canvas>
+                <!--<canvas>usado para fazer desenhos-->
+            </div>
+            <div class="graph">
+                <h4 style="color: #1C85E8;;">Movimentação por periodo</h4>
+                <input type="date" id="data_grafico" onchange="getGraph2()">
+                <canvas id="myChartMovimentacao" width="100%" height="40%"></canvas>
+                <!--<canvas>usado para fazer desenhos-->
+            </div>
+            <div class="metrica">
+                <div class="color green">Excelente</div>
+                <div class="color yellow">Aceitável</div>
+                <div class="color orange">Abaixo do Esperado</div>
+                <div class="color red">Muito Abaixo do Esperado</div>
+            </div>
+            <div class="result_container">
+            
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1">
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=96a476ce-cae4-4e95-a7a2-4356d5d4cbae"> </script></body>
+
+</html>
+<script>
+
+var ctx = document.getElementById('myChartMovimentacao').getContext('2d'); /*pega o elemento com id Bar*/
+var ctr = document.getElementById('chart-real').getContext('2d');
+var ct2 = document.getElementById('chart-switch').getContext('2d'); /*pega o elemento com id Bar*/
+
+
+var myChartMovimentacao = new Chart(ctx, { /*pegeui  um novo grafico*/
+    type: 'line',
+    data: {
+        labels: [], /*legendas do grafico*/
+        datasets: [{
+            label: 'Movimentação por Período', /*titulo não tem no pie o tipo vira a legenda*/
+            data: [], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+            backgroundColor: [
+                '#5FAFEC', /*r=red, g=green, b=blue, a=opacidade */
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC'
+            ],
+            borderColor: [
+                '#1C85E8', /*r=red, g=green, b=blue, a=opacidade */
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    color: "#1C85E8"
+                }
+            }
+        },
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+        scales: {
+            x: {
+                ticks: {
+                    color: "#1C85E8"
+                }
+            },
+            y: {
+                ticks: {
+                    color: "#1C85E8"
+                }
+            }
+        }
+    }
+});
+
+
+var myChartDias = new Chart(ct2, { /*pegeui  um novo grafico*/
+    type: 'line',
+    data: {
+        labels: [], /*legendas do grafico*/
+        datasets: [{
+            lineTension: 0.7, 
+            label: 'Movimentação por Período', /*titulo não tem no pie o tipo vira a legenda*/
+            data: [], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+            backgroundColor: [
+                '#5FAFEC', /*r=red, g=green, b=blue, a=opacidade */
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC'
+            ],
+            borderColor: [
+                '#1C85E8', /*r=red, g=green, b=blue, a=opacidade */
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        bezierCurve : true,
+        plugins: {
+            legend: {
+                labels: {
+                    color: "#5FAFEC;"
+                }
+            }
+        },
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+        scales: {
+            x: {
+                ticks: {
+                    color: "#1C85E8"
+                }
+            },
+            y: {
+                ticks: {
+                    color: "#1C85E8"
+                }
+            }
+        }
+    }
+});
+
+var myChartTempoReal = new Chart(ctr, { /*pegeui  um novo grafico*/
+    type: 'line',
+    data: {
+        labels: [], /*legendas do grafico*/
+        datasets: [{
+            lineTension: 0.7, 
+            label: 'Movimentação em Tempo Real', /*titulo não tem no pie o tipo vira a legenda*/
+            data: [], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+            backgroundColor: [
+                '#5FAFEC', /*r=red, g=green, b=blue, a=opacidade */
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC',
+                '#5FAFEC'
+            ],
+            borderColor: [
+                '#1C85E8', /*r=red, g=green, b=blue, a=opacidade */
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8',
+                '#1C85E8'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        bezierCurve : true,
+        plugins: {
+            legend: {
+                labels: {
+                    color: "#5FAFEC;"
+                }
+            }
+        },
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+        scales: {
+            x: {
+                ticks: {
+                    color: "#1C85E8"
+                }
+            },
+            y: {
+                ticks: {
+                    color: "#1C85E8"
+                }
+            }
+        }
+    }
+});
+
+</script>

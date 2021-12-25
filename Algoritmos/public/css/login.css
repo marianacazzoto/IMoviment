@@ -1,0 +1,124 @@
+.login{
+    margin: 60px auto;
+}
+
+.login-container{
+    margin: 0 auto;
+    width: 700px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    background: #065796;
+    border-radius: 50px;    
+    height: 495px;
+    position: relative;
+    z-index: 0;
+}
+
+
+.login-container .img img {
+    width: 550px;
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    z-index: 1;
+}
+
+.login-container .textos {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login-container .textos p{
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 59px;
+    text-align: center;
+
+    color: #fff;
+}
+
+.login-container .textos label{
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #fff;
+}
+
+.login-container .form {
+    width: 30%;
+    color: #fff;
+    font-weight: 300;
+    margin-right: 100px;
+    z-index: 3;
+    
+}
+
+.login-container button {
+    color: #FFF;
+    margin: 0 135px 0 300px;
+    width: 120px;
+    height: 35px;
+    background: #5FAFEC;
+    border: 1px solid #504100;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    transition: 0.1s;
+    z-index: 3;
+}
+.formulario{
+    width: 250px;
+    margin: 0 67px;
+}
+
+.formulario #inp_senha, #inp_email {
+    width: 100%;
+}
+
+.formulario .ipt_cod{
+    width: 35px;
+}
+
+.formulario p {
+    text-align: start;
+    margin-bottom: 0px;
+}
+
+.formulario input {
+    margin-bottom: 5px;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: solid 2px #5FAFEC;
+    border-radius: 2px;
+    height: 20px;
+    -webkit-appearance: none;
+    outline: none;  
+}
+
+.formulario select, option{
+    width: 100%;
+}
+
+.formulario input:hover{
+    border-bottom: solid 2px #000;
+}
+.formulario input:focus{
+    border-bottom: solid 2px #000;
+}
+
+.login-container button:hover{
+    border: 2px solid #000;
+    background-color: #5FAFEC;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Condomínio</title>
+    <script src="./js/funcoes.js"></script>
+    <!-- <script src="./js/funcoes.js"></script> -->
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    
+                    <li id="li"><a href="./admin.html" class="nav-bar-btn" >Condomínios Cadastrados</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./index.html"><button onclick="limparSessao()" id="btn-cadastrar">Sair</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cadastro">
+        <div class="container">
+            <div class="cadastro-container">
+                <div class="cadastro-form">
+                    <div class="textos">
+                        <h1 class="titulo">CADASTRO CONDOMÍNIOS</h1>
+                        <p>Adicione novos Condomínios? Faça o cadastro!</p>
+                    </div>
+                    <div class="form">
+                        <div class="row-1 row">
+                            <label for="inp_nome" >*Nome:</label><input type="text" name="inp_nome" id="inp_nome" >
+                            <label for="inp_cep" id="label-inp_cep">*Cep:</label><input type="text" name="inp_cep" id="inp_cep" >
+                        </div>
+                        <div class="row-2 row">
+                            <label for="inp_num">Número: </label><input type="text" name="inp_num" id="inp_num" >
+                        </div>
+                        <!-- <div class="row-5 row">
+                            <label for="inp_senha">*Senha:</label><input type="text" name="inp_senha" id="inp_senha" >
+                            <label for="inp_senhaconfirm">Confirmar Senha:</label><input type="text" name="inp_tsenhaconfirm" id="inp_senhaconfirm" >
+                        </div> -->
+                        
+                    </div>
+                    <button onclick="cadastrar()">Vamos lá!</button>
+                </div>
+                <div class="img">
+                    <img src="./img/Group 10.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1">
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine         ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=96a476ce-cae4-4e95-a7a2-4356d5d4cbae"> </script>
+</body>
+</html>
+<script>
+
+    function cadastrar() {
+        /* 
+        a primeira parte do processo é recolher o valor das coisas inseridas nos inputs
+        essas variáveis são as informações obrigatórias, marcadas com * no site
+        */
+        var nomeVar = inp_nome.value
+        var cepVar = inp_cep.value;
+        var numVar = inp_num.value
+        var usuario = sessionStorage.ID_USUARIO
+       
+
+        // Agora tem de verificar se esses campos não estão vazios
+        // if (razao_social && cnpj && cep && endereco && senha && telefone)  {
+        //         if(cnpj.length == 18){
+        //             if (telefone.length == 11 || telefone.length == 10){
+        //                 if (cep.length == 8){
+        //                     if (senha.length>= 8){
+        //                         if (senha == confirm){
+        //                             window.location.replace("login.html");
+        //                         } else {
+        //                             alert("As senhas não batem")
+        //                         }
+        //                     } else {
+        //                         alert("A senha tem de ter pelo menos 8 caracteres")
+        //                     }
+        //                 } else{
+        //                     alert("O CEP têm de ter 8 números!")
+        //                 }
+        //             } else{
+        //                 alert("Digite o telefone corretamente, somente o DDD e o número")
+        //             }
+        //         } else {
+        //             alert("cnpj inválido")
+        //         }
+        // } else {
+        //     alert("preencha todos os campos obrigatórios")
+        // }
+
+
+    if (nomeVar == "" || cepVar == "" || numVar == "") {
+
+                window.alert("Preencha todos os campos para prosseguir!");
+                if (nomeVar == "") {
+                    console.log('nome está em branco')
+                }
+                if (cepVar == "") {
+                    console.log('cep está em branco')
+                }
+                if (numVar == "") {
+                    console.log('telefone está em branco')
+                }
+                finalizarAguardar();
+                }
+
+                // if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+                // window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+                // finalizarAguardar();
+                // return false;
+                // }
+
+                if(cepVar.length != 8){
+                   alert('Cep inválido')
+                   return
+                }
+
+                let r = (Math.random() * 4 +1).toFixed()
+
+                let thumbnailVar = `condominio00${r}.jpg`
+
+                fetch("/usuarios/cadastrarCond", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome: nomeVar,
+                    cep: cepVar,
+                    num: numVar,
+                    thumbnail: thumbnailVar,
+                    usuario: usuario
+                })
+                }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                        console.log("Parabens você realizou um cadastro!");
+                        setTimeout(function () {
+                            window.location = "admin.html";
+                        }, 1000); // apenas para exibir o loading
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+                }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                });
+
+                    return false;
+
+    }
+
+    
+    
+</script> 
+
+

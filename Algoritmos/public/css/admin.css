@@ -1,0 +1,167 @@
+.admin {
+    margin: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-container{
+    width: 100%;
+    height: 842px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: linear-gradient(0deg, #065796, #065796);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    position: relative;
+}
+
+.admin-container .title{
+    margin-top: 20px;
+    width: 100%;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+}
+
+.admin-container .description{
+    margin: 15px;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.admin-container .background{
+    height: 662px;
+    width: 100%;
+    background: rgba(65, 65, 65, 0.5);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: absolute;
+    bottom: 0;
+}
+
+.admin-container .cond-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.admin-container .cond-list .title {
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.admin-container .cond-list .card{
+    width: 356px;
+    height: 240px;
+    position: relative;
+}
+
+.admin-container .cond-list .card img{
+    width: 220px;
+    height: 211px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(.jpg);
+    border-radius: 15px;
+}
+
+.admin-container .cond-list .card .descr{
+    width: 289px;
+    height: 67px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 6px 0 ;
+}
+
+.admin-container .cond-list .card .descr .title{
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #065796;
+    text-align: center;
+    width: 100%;
+    margin: 0 0;
+}
+
+.admin-container .cond-list .card .descr p{
+    margin: 0 15px;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #414141;
+}
+.nav-bar-btn{
+    background-color: #065796;
+    border-radius: 10px;    
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    transition: 0.2s;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 15px;
+}
+.nav-bar-btn:hover{
+    background-color: #5FAFEC;
+    transition: 0.2s;
+}
+
+.admin-container .cond-list button{
+    appearance: none;
+
+    height: 150px;
+    border: none;
+    background-color: #242424;
+    border-radius: 10px;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: 0.2s;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 15px;
+}
+.admin-container .cond-list button:hover{
+    color: #414141;
+    background-color: #ffd000;
+}
+

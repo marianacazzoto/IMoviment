@@ -1,0 +1,103 @@
+
+
+
+.about-us-container{
+    margin: 60px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, #065796, #065796);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    padding-bottom: 80px;
+}
+
+
+.about-us-content {
+    width: 40%;
+    height: 320px;
+    margin-top: 85px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.about-us-content h1 {
+    color: #FFFF;
+    font-weight: 500;
+    text-align: center;
+}
+
+.about-us-content p {
+    font-size: 15px;
+    width: 90%;
+    text-align: justify;
+}
+
+.about-us-container .p1 {
+    font-weight: 300;
+    color: #FFFF;
+}
+
+.about-us-container .p2 {
+    font-weight: 700;
+    color: #FFFF;
+}
+
+.about-us-content .t1 {
+    margin-top: 10px;
+}
+
+.about-us-content .t2 {
+    margin-top: 14px;
+}
+
+.about-us-content .t4 {
+    margin-top: 14px;
+}
+
+.about-us-content .t6 {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.about-us-team {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 40px;
+}
+
+.about-us-team img{
+    width: 100px;
+    padding-bottom: 11.5px;
+}
+
+.about-us-team h1{
+    padding-bottom: 26px;
+}
+
+.about-us-team .img{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.about-us-team .img .img-name{
+    width: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.about-us-team .img .photo{
+    height: 100px;
+    padding: 15px 15px 15px 15px;
+}

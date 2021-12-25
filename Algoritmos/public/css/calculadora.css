@@ -1,0 +1,145 @@
+.div-header-container-login-cadastro #btn-cadastrar{
+    background-color: #065796;
+    border-radius: 10px;    
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #fff;
+    transition: 0.2s;
+    pointer-events: none;
+    cursor: default;
+}
+
+.div-header-container-login-cadastro #btn-cadastrar:hover{
+    color: #fff;
+    background-color: #5FAFEC;
+}
+
+
+.clc{
+    margin: 50px 0 50px 0;
+    width: 100%;
+}
+
+.clc-container{
+    height: 543.3px;
+    background: linear-gradient(0deg, #065796, #065796);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clc-container #clc-titulo, #clc-desc{    
+    position: absolute;
+    margin: 0 auto 0 auto;
+    left: 0;
+    right:  0;
+    text-align: center;
+    font-family: Chivo;
+}
+
+.clc-container #clc-titulo {
+    top: 6.6%;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 33.18px;
+    line-height: 59px;
+    color: #fff;
+}
+
+.clc-container #clc-desc {
+    top: 15%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13.27px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.clc-container #clc-form-n-img {
+    
+    top: 126.12px;
+    left: 0;
+    right: 0;
+    margin: 0 80.97px 0 80.97px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#clc-form {
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#clc-form .clc-qst{
+    width: 450px;
+    display: block;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17.3px;
+    line-height: 25px;
+    color: #ffff;
+}
+
+#clc-form .clc-inp{
+    width: 207.9px;
+    background: #E0E0E0;
+    border-radius: 7px;
+    border: none;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    color: #414141;
+    margin-bottom: 6px;
+}
+
+#clc-form #clc-btn {
+    width: 207.9px;
+    background: #5FAFEC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+    font-family: Chivo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 36px;
+    text-align: center;
+    margin: 17.3px 123.0545px 0 123.0545px;
+    color: #065796;
+    border:none;
+}
+#clc-form #clc-btn:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+#clc-img {
+    width: 50%;
+    height: 213px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#clc-img img{
+    height: 115%;
+}
+
+
+.display-msg {
+    display: none;
+}
+

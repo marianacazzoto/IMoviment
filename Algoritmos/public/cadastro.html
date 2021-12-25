@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <!-- <script src="./js/funcoes.js"></script> -->
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">
+                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    <li id="li-left"><a href="./index.html" class="nav-bar-li">Home</a></li>
+                    <li id="li-center"><a href="./about-us.html" class="nav-bar-li">Sobre</a></li>
+                    <li id="li-right"><a href="./contato.html" class="nav-bar-li">Contato</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./login.html" id="btn-login">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cadastro">
+        <div class="container">
+            <div class="cadastro-container">
+                <div class="cadastro-form">
+                    <div class="textos">
+                        <h1 class="titulo">CADASTRO</h1>
+                        <p>Não é  cliente? Faça seu cadastro!</p>
+                    </div>
+                    <div class="form">
+                        <div class="row-1 row">
+                            <label for="inp_razaosocial" >*Razão Social:</label><input type="text" name="inp_razaosocial" id="inp_razaosocial" >
+                            <label for="inp_cnpj" id="label-inp_cnpj">*CNPJ:</label><input type="text" name="inp_cnpj" id="inp_cnpj" oninput="maskCNPJ(this.value,document.getElementById('inp_cnpj'))">
+                        </div>
+                        <div class="row-2 row">
+                            <label for="inp_email">Email: </label><input type="text" name="inp_email" id="inp_email" >
+                            <label for="inp_tel" id="label-inp_tel">*Telefone</label><input type="text" name="inp_tel" id="inp_tel" >
+                        </div>
+                        <div class="row-5 row">
+                            <label for="inp_senha">*Senha:</label><input type="text" name="inp_senha" id="inp_senha" >
+                            <label for="inp_senhaconfirm">Confirmar Senha:</label><input type="text" name="inp_tsenhaconfirm" id="inp_senhaconfirm" >
+                        </div>
+                        
+                    </div>
+                    <button onclick="cadastrar()">Vamos lá!</button>
+                </div>
+                <div class="img">
+                    <img src="./img/img-cadastro.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1">
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine         ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+
+    function maskCNPJ(value , id){
+        var x = value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+
+        id.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x  [4] + (x[5] ? '-' + x[5] : '');
+    }
+
+    function cadastrar() {
+        /* 
+        a primeira parte do processo é recolher o valor das coisas inseridas nos inputs
+        essas variáveis são as informações obrigatórias, marcadas com * no site
+        */
+        var razao_socialVar = inp_razaosocial.value
+        var cnpjVar = (inp_cnpj.value).replace(/\D/g,'');
+        var telefoneVar = inp_tel.value
+        var emailVar = inp_email.value
+        var senhaVar = inp_senha.value
+        var confirmVar = inp_senhaconfirm.value
+
+        // Agora tem de verificar se esses campos não estão vazios
+        // if (razao_social && cnpj && cep && endereco && senha && telefone)  {
+        //         if(cnpj.length == 18){
+        //             if (telefone.length == 11 || telefone.length == 10){
+        //                 if (cep.length == 8){
+        //                     if (senha.length>= 8){
+        //                         if (senha == confirm){
+        //                             window.location.replace("login.html");
+        //                         } else {
+        //                             alert("As senhas não batem")
+        //                         }
+        //                     } else {
+        //                         alert("A senha tem de ter pelo menos 8 caracteres")
+        //                     }
+        //                 } else{
+        //                     alert("O CEP têm de ter 8 números!")
+        //                 }
+        //             } else{
+        //                 alert("Digite o telefone corretamente, somente o DDD e o número")
+        //             }
+        //         } else {
+        //             alert("cnpj inválido")
+        //         }
+        // } else {
+        //     alert("preencha todos os campos obrigatórios")
+        // }
+
+
+    if (razao_socialVar == "" || cnpjVar == "" || senhaVar == "" || telefoneVar == "" || emailVar == "") {
+
+                window.alert("Preencha todos os campos para prosseguir!");
+                if (razao_socialVar == "") {
+                    console.log('razão social está em branco')
+                }
+                if (cnpjVar == "") {
+                    console.log('cnpj está em branco')
+                }
+                if (telefoneVar == "") {
+                    console.log('telefone está em branco')
+                }
+                if (emailVar == "") {
+                    console.log('endereço está em branco')
+                }
+                if (senhaVar == "") {
+                    console.log('senha está em branco')
+                }
+                if (confirmVar == "") {
+                    console.log('confirmação da senha está em branco')
+                }
+                finalizarAguardar();
+                }
+
+                // if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+                // window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+                // finalizarAguardar();
+                // return false;
+                // }
+
+                if (senhaVar != confirmVar) {
+                window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+                return false;
+                }
+
+                fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    razaoSocial: razao_socialVar,
+                    cnpj: cnpjVar,
+                    email: emailVar,
+                    senha: senhaVar,
+                    telefone: telefoneVar
+                })
+                }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    resposta.json().then(json => {
+                        console.log("Parabens você realizou um cadastro! Realizar login");
+                        console.log(JSON.stringify(json));
+                        // sessionStorage.EMAIL_USUARIO = json.email;
+                        // sessionStorage.NOME_USUARIO = json.razao_social;
+                        // sessionStorage.ID_USUARIO = json.id_administrador;
+                        // sessionStorage.TELEFONE_USUARIO = json.telefone;
+                        setTimeout(function () {
+                            window.location = "login.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+                }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                });
+
+                    return false;
+
+    }
+
+    
+    
+</script> 
+
+

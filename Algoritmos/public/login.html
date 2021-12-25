@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <!-- <script src="./js/funcoes.js"></script> -->
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="shortcut icon" href="./images/image 17.png" type="image/x-icon">
+    <script type="Text/JavaScript" src="./control.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">
+                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    <li id="li-left"><a href="./index.html" class="nav-bar-li">Home</a></li>
+                    <li id="li-center"><a href="./about-us.html" class="nav-bar-li">Sobre</a></li>
+                    <li id="li-right"><a href="./contato.html" class="nav-bar-li">Contato</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./cadastro.html" id="btn-cadastrar">Cadastre-se</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="login">
+        <div class="container">
+            <div class="login-container">
+                <div class="textos">
+                    <p>LOGIN</p>
+                    <label>Já é cliente? Faça seu login para acessar suas informações.</label>
+                </div>
+                <div class="img">
+                    <img src="./img/img-login.png" alt="imagem_login" class="img_login"> 
+                </div>
+                <div class="formulario">
+                    <p class="form">Email:</p>
+                    <input id="inp_email" type="text" placeholder="fulano@dominio.com">
+                    <p class="form">Senha:</p>
+                    <input id="inp_senha" type="password" style="-webkit-text-security:circle" placeholder="********" >
+                    <!-- <label class="box-check">Código de acesso:</label>
+                    <select id="ipt_cod" class="ipt_cod"><option value="100">Administrador</option> <option value="101">Condomínio</option></select> -->
+                </div>
+
+                <!-- <div class="formulario">
+                    <div>
+                        E-mail:
+                        <input id="email_input" type="text" placeholder="Login">
+                        <br>
+                        Senha:
+                        <input id="senha_input" type="password" placeholder="******">
+                        <br>
+                        <button class="btn" onclick="entrar()">Entrar</button>
+                    </div>
+
+
+                </div> -->
+                <button onclick="entrar()"> Entrar </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1">
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine         ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    
+//     function entrar(){
+//     var email = (inp_email.value).replace(/\D/g,'');
+//     var senha = inp_senha.value;
+//     var cod = ipt_cod.value;
+//     /*todos digitos que nao forem digitos(numeros) se torna vazio /D*/
+//     /*tira texto de numero /d */
+//     /*encontrar qualquer ocorencia ex: %ocorencia% */
+    
+//     if (email == "00000000000000" || 
+//     email == "11111111111111" || 
+//     email == "22222222222222" || 
+//     email == "33333333333333" || 
+//     email == "44444444444444" || 
+//     email == "55555555555555" || 
+//     email == "66666666666666" || 
+//     email == "77777777777777" || 
+//     email == "88888888888888" || 
+//     email == "99999999999999"){
+//         alert ('email inválido!');
+//         inp_email.focus();
+//     }
+//     else if ( senha == '' || email == '' || cod == ''){
+//         alert ('email, senha e/ou código em branco, insira os dados');
+//     }
+//     else if(senha.length <script 8){
+//         alert("A senha deve conter no mínimo 8 digitos!");
+//         inp_senha.focus();
+//     }
+//     else if (cod == 100){
+//         window.location.replace("./admin.html");
+//     }
+//     else if (cod == 101){
+//         window.location.replace("./dashboard.html");
+//     }
+//     else if (cod != 100 || cod !=101) {
+//             alert ('Código inválido!');
+//             ipt_cod.focus();
+//     }
+//     else{
+//         alert ('email e/ou senha inválidos!');
+//         /*colocar o caminho das telas adm e cond*/
+//         // window.location.href = "./site-Institucional01.html"
+//     }
+//     inp_email.value='';
+//     inp_senha.value='';
+//     ipt_cod.value='';
+// }
+
+function entrar() {
+
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            // finalizarAguardar();
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            // finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: emailVar,
+                senha: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+            console.log(resposta)
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.razao_social;
+                    sessionStorage.ID_USUARIO = json.id_administrador;
+                    sessionStorage.TELEFONE_USUARIO = json.telefone;
+                    setTimeout(function () {
+                        window.location = "admin.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>

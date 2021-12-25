@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="./css/contato.css">
+    <script src="control.js"></script>
+    <title>Contato</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html" class="header-acesso-index" id="header_logo_div">
+                    <div id="div-header-container-logo">
+                        <img src="./img/logo.svg" alt="" class="img" id="header_img">
+                       
+                    </div>
+                </a>
+                <ul class="header-nav-bar">
+                    <li id="li-left"><a href="./index.html" class="nav-bar-li">Home</a></li>
+                    <li id="li-center"><a href="./about-us.html" class="nav-bar-li">Sobre</a></li>
+                    <li id="li-right"><a href="./contato.html" class="nav-bar-li" id="index">Contato</a></li>
+                </ul>
+                <div class="div-header-container-login-cadastro">
+                    <a href="./cadastro.html" id="btn-cadastrar">Cadastre-se</a>
+                    <a href="./login.html" id="btn-login">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contato"> 
+        <div class="container">
+            <div class="contato-container">
+                <div class="p1">
+                    <div class="form">
+                        <label for="inp_nome" id="row-1">Nome:</label><input type="text" id="inp_nome">
+                        <label for="inp_email">E-mail:</label><input type="text" id="inp_email">
+                        <label for="inp_assunto">Assunto:</label><input type="text" id="inp_assunto">
+                        <label for="inp_nome">No que podemos ajudar?</label><textarea id="textarea" rows="8"></textarea>
+                        <button onclick="ticket()">Manda aê</button>
+                    </div>
+                    <div class="conteudo">
+                        <h1>Fala que a gente te escuta!</h1>
+                        <p>Ficou com alguma dúvida, tem alguma crítica ou sugestão? Preenche esse formulário rapidinho e a gente entra em contato com você!</p>
+                        <img src="./img/img-contato.png" alt="">
+                    </div>
+                </div>
+                <div class="p2">
+                    <div class="concluido">
+                        <h1>Ticket feito!</h1>
+                        <p>
+                            O seu ticket acabou de ser enviado para nossa equipe e retornaremos assim que possível <br>
+                            Sinta-se a vonta para retornar a nossa página inicial
+                        </p>
+                        <a onclick="inicio()" href="index.html">Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="div-footer1"> 
+                <p class="footer-direitos">Todos os direitos reservados para o site TecShine         ©2021 </p>
+            </div>
+            <div class="div-footer2">
+                <img src="./img/instagram.svg" alt="" class="redes-sociais">
+                <img src="./img/facebook.svg" alt="" class="redes-sociais">
+                <img src="./img/twitter.svg" alt="" class="redes-sociais">
+                <img src="./img/linkedin.svg" alt="" class="redes-sociais">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
